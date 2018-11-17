@@ -9,10 +9,12 @@
 
 namespace App\Models;
 
-class User extends CoreModel
+use Illuminate\Database\Eloquent\Model;
+
+class CoreModel extends Model
 {
-	protected $table = 'user';
-	public $incrementing = false;
-	protected $keyType = 'string';
-	public $timestamps = false;
+	public function scopeGetAllData() 
+	{
+		return $this::all();
+	}
 }
